@@ -1,0 +1,22 @@
+# Secrets — most critical
+.env
+profiles.yml
+
+# Python
+venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# dbt
+dbt_ucl/target/
+dbt_ucl/logs/
+.dbt/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/
