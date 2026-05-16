@@ -42,7 +42,7 @@ class AzureStorageClient:
                 container=container, blob=blob_path)
             blob_client.upload_blob(json_bytes, overwrite=True)
             logger.info(
-                f"Uploaded JSON → {container}/{blob_path} "f"({len(json_bytes):,} bytes)")
+                f"Uploaded JSON -> {container}/{blob_path} "f"({len(json_bytes):,} bytes)")
             return True
         except Exception as e:
             logger.error(f"Failed to upload {blob_path}: {e}")

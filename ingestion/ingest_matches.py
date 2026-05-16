@@ -64,7 +64,7 @@ def ingest_ucl_matches(season: int = 2024) -> bool:
         )
 
     else:
-        logger.error("❌ Upload failed — check Azure credentials")
+        logger.error(" Upload failed — check Azure credentials")
 
     return success
 
@@ -79,5 +79,5 @@ if __name__ == "__main__":
 
     print(
         f"Ingestion result: "
-        f"{'✅ SUCCESS' if result else '❌ FAILED'}"
+        f"{' SUCCESS' if result else ' FAILED'}"
     )
