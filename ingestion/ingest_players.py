@@ -77,7 +77,7 @@ def ingest_ucl_scorers(season: int = 2024, limit: int = 50) -> bool:
         container=AZURE_BRONZE_CONTAINER, blob_path=blob_path, data=data)
 
     if success:
-        logger.info(f"✅ Players ingestion complete")
+        logger.info(f"   Players ingestion complete")
         logger.info(f"   Scorers written : {scorer_count}")
         logger.info(f"   Blob path       : {blob_path}")
     else:
