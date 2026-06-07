@@ -1,7 +1,7 @@
-requests==2.31.0 # HTTP calls to football-data.org API
-python-dotenv==1.0.0 # loads .env file safely
-azure-storage-blob==12.19.0 # read/write Azure ADLS Gen2
+requests==2.34.0 # HTTP calls to football-data.org API
+python-dotenv==1.2.2 # loads .env file safely
+azure-storage-blob==12.28.0 # read/write Azure ADLS Gen2
 dbt-core==1.11.8 # dbt SQL transformation framework
 duckdb==1.10.0 # analytics database — Gold layer
-pytest==7.4.0 # unit testing
-pytest-mock==3.11.1 # mock API calls in tests
+pytest==9.0.3 # unit testing
+pytest-mock==3.15.1 # mock API calls in tests
