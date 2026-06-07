@@ -1,0 +1,13 @@
+# ================================================================
+# profiles.yml.example — connection template
+# Copy this to ~/.dbt/profiles.yml and update path if needed
+# This file IS committed to Git as a setup reference
+# ================================================================
+
+ucl_duckdb:
+  target: dev
+  outputs:
+    dev:
+      type   : duckdb
+      path   : "../data/ucl_gold.duckdb"
+      threads: 1
