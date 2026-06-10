@@ -27,13 +27,13 @@ staged as (
         status,
         is_finished,
 
-        -- ── Competition ───────────────────────────────────
+        --Competition 
         competition_id,
         competition_name,
         competition_code,
         season_id,
 
-        -- ── Teams ─────────────────────────────────────────
+        -- Teams 
         home_team_id,
         home_team_name,
         home_team_short,
@@ -41,20 +41,20 @@ staged as (
         away_team_name,
         away_team_short,
 
-        -- ── Scores ────────────────────────────────────────
+        -- Scores 
         home_score_ft,
         away_score_ft,
         home_score_ht,
         away_score_ht,
 
-        -- ── Derived columns from Silver ───────────────────
+        -- Derived columns from Silver 
         winner,
         home_result,
         total_goals,
         goal_difference,
         referee_name,
 
-        -- ── Audit metadata ────────────────────────────────
+        -- Audit metadata 
         silver_processed_at,
         source_blob
 
