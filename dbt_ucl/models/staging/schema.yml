@@ -1,0 +1,126 @@
+# ================================================================
+# schema.yml — staging layer
+# Declares column descriptions and data quality tests.
+# dbt runs these automatically as part of dbt test / dbt build.
+# ================================================================
+
+version: 2
+
+models:
+  # stg_matches
+  - name: stg_matches
+    description: >
+      Cleaned UCL match results from Silver layer.
+      One row per match. Finished and scheduled matches included.
+      Source: football-data.org REST API via Bronze ingestion.
+
+    columns:
+      - name: match_id
+        description: Unique match identifier from football-data.org
+        tests:
+          - not_null
+          - unique
+
+      - name: match_date
+        description: Date the match was played (DATE type)
+        tests:
+          - not_null
+
+      - name: home_team_name
+        description: Full name of the home team
+        tests:
+          - not_null
+
+      - name: away_team_name
+        description: Full name of the away team
+        tests:
+          - not_null
+
+      - name: status
+        description: >
+          Current match status from the API.
+          FINISHED = played. SCHEDULED = upcoming. POSTPONED = delayed.
+        tests:
+          - accepted_values:
+              values:
+                - FINISHED
+                - SCHEDULED
+                - POSTPONED
+                - CANCELLED
+                - IN_PLAY
+                - TIMED
+
+      - name: is_finished
+        description: Boolean flag — true if match has been played
+        tests:
+          - not_null
+
+  # tg_teams
+  - name: stg_teams
+    description: >
+      UCL team metadata from Silver layer.
+      One row per team. Used as dimension table in mart joins.
+      Source: football-data.org teams endpoint.
+
+    columns:
+      - name: team_id
+        description: Unique team identifier — primary key of this model
+        tests:
+          - not_null
+          - unique
+
+      - name: team_name
+        description: Full official team name
+        tests:
+          - not_null
+
+      - name: team_tla
+        description: Three-letter abbreviation — always uppercase
+        tests:
+          - not_null
+
+      - name: area_name
+        description: Country or region the team is based in
+        tests:
+          - not_null
+
+  # stg_players
+  - name: stg_players
+    description: >
+      UCL top scorers from Silver layer.
+      One row per player. Ordered by scorer_rank ascending.
+      Source: football-data.org scorers endpoint.
+
+    columns:
+      - name: player_id
+        description: Unique player identifier — primary key of this model
+        tests:
+          - not_null
+          - unique
+
+      - name: player_name
+        description: Full player name as provided by API
+        tests:
+          - not_null
+
+      - name: goals
+        description: Total UCL goals scored this season
+        tests:
+          - not_null
+
+      - name: team_id
+        description: >
+          ID of the team this player represents.
+          Foreign key to stg_teams.team_id.
+        tests:
+          - not_null
+          - relationships:
+              to: ref('stg_teams')
+              field: team_id
+
+      - name: scorer_rank
+        description: >
+          Rank by total goals descending. Rank 1 = top scorer.
+          Uses dense_rank so ties share the same rank.
+        tests:
+          - not_null
