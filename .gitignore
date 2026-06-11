@@ -21,7 +21,8 @@ Thumbs.db
 *.log
 logs/
 
-# Local data (if any)
+#local file downloads
 data/silver_local/
 
+# DuckDB database file — generated, not committed
 data/ucl_gold.duckdb
