@@ -1,6 +1,7 @@
 # Secrets — most critical
 .env
 profiles.yml
+superset_config.py
 
 # Python
 venv/
