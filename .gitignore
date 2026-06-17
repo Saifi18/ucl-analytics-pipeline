@@ -1,12 +1,14 @@
 # Secrets — most critical
 .env
 profiles.yml
+superset_config.py
 
 # Python
 venv/
 __pycache__/
 *.pyc
 .pytest_cache/
+venv-superset/
 
 # dbt
 dbt_ucl/target/
@@ -20,3 +22,9 @@ Thumbs.db
 # Logs
 *.log
 logs/
+
+#local file downloads
+data/silver_local/
+
+# DuckDB database file — generated, not committed
+data/ucl_gold.duckdb
