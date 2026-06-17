@@ -1,12 +1,14 @@
 # Secrets — most critical
 .env
 profiles.yml
+superset_config.py
 
 # Python
 venv/
 __pycache__/
 *.pyc
 .pytest_cache/
+venv-superset/
 
 # dbt
 dbt_ucl/target/

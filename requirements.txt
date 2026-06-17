@@ -5,3 +5,4 @@ dbt-core==1.11.8 # dbt SQL transformation framework
 duckdb==1.10.0 # analytics database — Gold layer
 pytest==9.0.3 # unit testing
 pytest-mock==3.15.1 # mock API calls in tests
+apache-superset==3.8.0 # data visualization and dashboarding
