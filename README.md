@@ -56,19 +56,19 @@ Three Apache Superset dashboards sit on top of the Gold layer, each answering on
 
 ### UCL Standings
 
-League table with points, goal difference, win percentage, and points-per-game — answering _"who is actually winning?"_
+UCL 2024-25 full league table, total goals in this season, Most Goals by Top 10 teams — answering _"who is actually winning?"_
 
 ![UCL Standings Dashboard](docs/screenshots/dashboards/02_ucl-standings.jpg)
 
 ### Team Form
 
-Rolling 5-match form per team — points, goals scored vs conceded, and goal difference trend — answering _"who is in form right now?"_
+Rolling 5-match form per team — points, goals scored vs conceded and team form summary — answering _"who is in form right now?"_
 
 ![Team Form Dashboard](docs/screenshots/dashboards/01_team-form.jpg)
 
 ### Top Scorers
 
-Ranked goal leaderboard with top goal scorers and assists— answering _"who carries their team's attack?"_
+Ranked goal leaderboard with top goal scorers and assists — answering _"who has MVP and carries their team's attack?"_
 
 ![Top Scorers Dashboard](docs/screenshots/dashboards/03_ucl-top-scorers.jpg)
 
@@ -134,7 +134,7 @@ ucl-analytics-pipeline/
 | Apache Superset over Power BI / Tableau                 | Free tiers of Power BI/Tableau restrict public dashboard sharing; Superset is fully open-source and self-hostable             |
 | Isolated Python 3.11 venv for Superset                  | numpy 1.26.x has no pre-built wheel for Python 3.13 on Windows, causing compiler-dependent build failures                     |
 
-Each of these reflects a real constraint encountered mid-build, not a textbook decision — see [`docs/design_decisions.md`](docs/design_decisions.md) for the full reasoning log.
+Each of these reflects a real constraint encountered mid-build, not a textbook decision — see [`docs/design_decision.md`](docs/design_decision.md) for the full reasoning log.
 
 ## ⚙️ Setup & Installation
 
