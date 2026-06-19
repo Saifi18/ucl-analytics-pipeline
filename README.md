@@ -58,19 +58,19 @@ Three Apache Superset dashboards sit on top of the Gold layer, each answering on
 
 League table with points, goal difference, win percentage, and points-per-game — answering _"who is actually winning?"_
 
-![UCL Standings Dashboard](docs/screenshots/Dashboards/02_ucl-standings.jpg)
+![UCL Standings Dashboard](docs/screenshots/dashboards/02_ucl-standings.jpg)
 
 ### Team Form
 
 Rolling 5-match form per team — points, goals scored vs conceded, and goal difference trend — answering _"who is in form right now?"_
 
-![Team Form Dashboard](docs/screenshots/Dashboards/01_team-form.jpg)
+![Team Form Dashboard](docs/screenshots/dashboards/01_team-form.jpg)
 
 ### Top Scorers
 
 Ranked goal leaderboard with top goal scorers and assists— answering _"who carries their team's attack?"_
 
-![Top Scorers Dashboard](docs/screenshots/Dashboards/03_ucl-top-scorers.jpg)
+![Top Scorers Dashboard](docs/screenshots/dashboards/03_ucl-top-scorers.jpg)
 
 ## 📁 Project Structure
 
